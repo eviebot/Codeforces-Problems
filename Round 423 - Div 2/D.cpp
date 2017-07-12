@@ -20,4 +20,34 @@ int main()
 {
 	infile.open("input.txt");
 	outfile.open("output.txt");
+
+	int n, k, i, j, sum;
+	cin >> n >> k;
+
+	int t = n-1;
+
+	sum = (t/k)*2;
+
+	if( t % k == 1)
+	{
+		sum ++;
+	}
+	if(t % k > 1)
+	{
+		sum += 2;
+	}
+
+	cout << sum << "\n";
+
+	for(i = 2; i <= k+1; ++i)
+	{
+		cout << 1<< " "<< i << "\n";
+	}
+
+	for(i = k+2; i <= n; ++i)
+	{
+		cout << i << " "<< i-k << "\n";
+	}
+
+	return 0;
 }

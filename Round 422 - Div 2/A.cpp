@@ -20,4 +20,12 @@ int main()
 {
 	infile.open("input.txt");
 	outfile.open("output.txt");
+	int a, b;
+	cin >> a >> b;
+	int c = min(a, b);
+
+	long long int multi = 1;
+	for(int i = 1; i <= c; ++i)
+		multi *= i;
+	cout << multi;
 }

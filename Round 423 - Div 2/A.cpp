@@ -20,4 +20,32 @@ int main()
 {
 	infile.open("input.txt");
 	outfile.open("output.txt");
+
+fastIO;
+	long long int n, a, b, i, j, sum = 0;
+	cin >> n >> a >> b;
+
+	b *= 2;
+
+	for(i = 0; i < n; ++i)
+	{
+		cin >> j;
+		if(j == 1)
+		{
+			if( a)
+				--a;
+			else if( b)
+				--b;
+			else
+				++sum;
+		}
+		else
+		{
+			if( b > 1)
+				b-= 2;
+			else
+				sum +=2;
+		}
+	}
+	cout << sum << "\n";
 }

@@ -18,6 +18,20 @@ ifstream infile;
 
 int main()
 {
-	infile.open("input.txt");
-	outfile.open("output.txt");
+    infile.open("input.txt");
+    outfile.open("output.txt");
+
+    long long int c, v0, v1, a, l;
+    cin >> c >> v0 >> v1 >> a >> l;
+
+    long long int n = 1, temp = 0;
+    while(true)
+    {
+        temp += min(v0 + (n-1)*a, v1);
+        if( temp >= c){
+            cout << n;break;}
+
+        temp -= l;
+        ++n;
+    }
 }
