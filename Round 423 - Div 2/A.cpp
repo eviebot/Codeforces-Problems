@@ -22,30 +22,35 @@ int main()
 	outfile.open("output.txt");
 
 fastIO;
-	long long int n, a, b, i, j, sum = 0;
-	cin >> n >> a >> b;
-
-	b *= 2;
+	long long int n, vacant_1, vacant_2, vacant_12 = 0, i, j, sum = 0;
+	cin >> n >> vacant_1 >> vacant_2;
 
 	for(i = 0; i < n; ++i)
 	{
 		cin >> j;
-		if(j == 1)
+		if( j == 1)
 		{
-			if( a)
-				--a;
-			else if( b)
-				--b;
+			if( vacant_1)
+				--vacant_1;
+			else if( vacant_2)
+			{
+				--vacant_2;
+				++vacant_12;
+			}
+			else if( vacant_12)
+				--vacant_12;
 			else
 				++sum;
 		}
 		else
 		{
-			if( b > 1)
-				b-= 2;
+			if( vacant_2)
+				--vacant_2;
 			else
 				sum +=2;
 		}
 	}
-	cout << sum << "\n";
+	cout << sum ;
 }
+
+	
