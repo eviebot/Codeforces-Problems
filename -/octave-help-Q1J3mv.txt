@@ -1,0 +1,6 @@
+the 'square' function belongs to the signal package from Octave Forge
+which seems to not be installed in your system.
+
+Please read <http://www.octave.org/missing.html> to learn how you can
+contribute missing functionality.
+

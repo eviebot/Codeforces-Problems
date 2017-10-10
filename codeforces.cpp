@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define DEBUG(x) cout << '>' << #x << ':' << x << endl;
 #define fastIO ios::sync_with_stdio(false);cout.tie(0);cin.tie(0);
 #define endl '\n'
 #define pb push_back

@@ -1,0 +1,19 @@
+ -- Function File: text (X, Y, STRING)
+ -- Function File: text (X, Y, Z, STRING)
+ -- Function File: text (..., PROP, VAL, ...)
+ -- Function File: H = text (...)
+     Create a text object with text STRING at position X, Y, (Z) on the
+     current axes.
+
+     Multiple locations can be specified if X, Y, (Z) are vectors.
+     Multiple strings can be specified with a character matrix or a cell
+     array of strings.
+
+     Optional property/value pairs may be used to control the appearance
+     of the text.
+
+     The optional return value H is a vector of graphics handles to the
+     created text objects.
+
+     See also: gtext, title, xlabel, ylabel, zlabel.
+

@@ -1,0 +1,65 @@
+ -- Command: clear [options] pattern ...
+     Delete the names matching the given patterns from the symbol table.
+
+     The pattern may contain the following special characters:
+
+     '?'
+          Match any single character.
+
+     '*'
+          Match zero or more characters.
+
+     '[ LIST ]'
+          Match the list of characters specified by LIST.  If the first
+          character is '!' or '^', match all characters except those
+          specified by LIST.  For example, the pattern '[a-zA-Z]' will
+          match all lowercase and uppercase alphabetic characters.
+
+     For example, the command
+
+          clear foo b*r
+
+     clears the name 'foo' and all names that begin with the letter 'b'
+     and end with the letter 'r'.
+
+     If 'clear' is called without any arguments, all user-defined
+     variables (local and global) are cleared from the symbol table.
+
+     If 'clear' is called with at least one argument, only the visible
+     names matching the arguments are cleared.  For example, suppose you
+     have defined a function 'foo', and then hidden it by performing the
+     assignment 'foo = 2'.  Executing the command 'clear foo' once will
+     clear the variable definition and restore the definition of 'foo'
+     as a function.  Executing 'clear foo' a second time will clear the
+     function definition.
+
+     The following options are available in both long and short form
+
+     '-all, -a'
+          Clear all local and global user-defined variables and all
+          functions from the symbol table.
+
+     '-exclusive, -x'
+          Clear the variables that don't match the following pattern.
+
+     '-functions, -f'
+          Clear the function names and the built-in symbols names.
+
+     '-global, -g'
+          Clear global symbol names.
+
+     '-variables, -v'
+          Clear local variable names.
+
+     '-classes, -c'
+          Clears the class structure table and clears all objects.
+
+     '-regexp, -r'
+          The arguments are treated as regular expressions as any
+          variables that match will be cleared.
+
+     With the exception of 'exclusive', all long options can be used
+     without the dash as well.
+
+     See also: who, whos, exist.
+
